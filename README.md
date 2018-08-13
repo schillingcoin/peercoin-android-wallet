@@ -1,8 +1,8 @@
-## Welcome to _Peercoin Wallet_
+## Welcome to _Schillingcoin Wallet_
 
-__What is _Peercoin Wallet_?__
+__What is _Schillingcoin Wallet_?__
 
-It is a standalone Peercoin payment app for your Android device!
+It is a standalone Schillingcoin payment app for your Android device!
 
 
 __This project contains several sub-projects:__
@@ -12,10 +12,10 @@ __This project contains several sub-projects:__
  * __market__:
      App description and promo material for the Google Play app store.
  * __integration-android__:
-     A tiny library for integrating Peercoin payments into your own Android app
+     A tiny library for integrating Schillingcoin payments into your own Android app
      (e.g. donations, in-app purchases).
  * __sample-integration-android__:
-     A minimal example app to demonstrate integration of Peercoin payments into
+     A minimal example app to demonstrate integration of Schillingcoin payments into
      your Android app.
 
 
@@ -26,6 +26,6 @@ __You can build all sub-projects at once using Maven:__
 
 __Donate to support further development:__
 
-You can donate peercoins to support further development of _Peercoin Wallet_ at [http://peer4commit.com/projects/129/](http://peer4commit.com/projects/129/)
+You can donate Schillingcoins to support further development of _Schillingcoin Wallet_ at [http://peer4commit.com/projects/129/](http://peer4commit.com/projects/129/)
 Peer4commit will distribute rewards to people that get pull requests merged into the source code.
 [![tip for next commit](http://peer4commit.com/projects/129.svg)](http://peer4commit.com/projects/129)

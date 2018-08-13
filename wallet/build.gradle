@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+description = 'Schillingcoin Wallet'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.schillingcoin.schillingcoin_android_wallet"
+        minSdkVersion 19
+        targetSdkVersion 27
+        buildToolsVersion '27.0.3'
+        versionCode 13
+        versionName "3.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_6
+        targetCompatibility JavaVersion.VERSION_1_6
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(path: ':integration-android')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation files('../../schillingcoinj/core/target/schillingcoinj-0.13.1.jar')
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.android.support:support-v13:27.1.1'
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version:'2.5.0'
+    implementation group: 'com.google.guava', name: 'guava', version:'16.0.1'
+    implementation group: 'com.google.zxing', name: 'core', version:'3.1.0'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version:'1.7.6'
+    implementation group: 'com.github.tony19', name: 'logback-android-classic', version:'1.1.1-3'
+    implementation group: 'com.github.tony19', name: 'logback-android-core', version:'1.1.1-3'
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version:'2.0.1'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version:'3.1'
+    implementation 'com.madgag.spongycastle:core:1.51.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    testImplementation 'junit:junit:4.11'
+}

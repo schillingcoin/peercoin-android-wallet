@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.matthewmitchell.peercoin_android_wallet.integration.sample;
+package com.schillingcoin.schillingcoin_android_wallet.integration.sample;
 
-import org.peercoin.protocols.payments.Protos;
+import org.Schillingcoin.protocols.payments.Protos;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -31,13 +31,13 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.matthewmitchell.peercoinj.core.Address;
-import com.matthewmitchell.peercoinj.core.AddressFormatException;
-import com.matthewmitchell.peercoinj.core.NetworkParameters;
-import com.matthewmitchell.peercoinj.script.ScriptBuilder;
+import com.schillingcoin.schillingcoinj.core.Address;
+import com.schillingcoin.schillingcoinj.core.AddressFormatException;
+import com.schillingcoin.schillingcoinj.core.NetworkParameters;
+import com.schillingcoin.schillingcoinj.script.ScriptBuilder;
 import com.google.protobuf.ByteString;
 
-import com.matthewmitchell.peercoin_android_wallet.integration.android.PeercoinIntegration;
+import com.schillingcoin.schillingcoin_android_wallet.integration.android.SchillingcoinIntegration;
 
 /**
  * @author Andreas Schildbach
@@ -92,7 +92,7 @@ public class SampleActivity extends Activity
 	{
 		final String[] addresses = donationAddresses();
 
-		PeercoinIntegration.requestForResult(SampleActivity.this, REQUEST_CODE, addresses[0]);
+		SchillingcoinIntegration.requestForResult(SampleActivity.this, REQUEST_CODE, addresses[0]);
 	}
 
 	private void handleRequest()
@@ -120,7 +120,7 @@ public class SampleActivity extends Activity
 			final Protos.PaymentRequest.Builder paymentRequest = Protos.PaymentRequest.newBuilder();
 			paymentRequest.setSerializedPaymentDetails(paymentDetails.build().toByteString());
 
-			PeercoinIntegration.requestForResult(SampleActivity.this, REQUEST_CODE, paymentRequest.build().toByteArray());
+			SchillingcoinIntegration.requestForResult(SampleActivity.this, REQUEST_CODE, paymentRequest.build().toByteArray());
 		}
 		catch (final AddressFormatException x)
 		{
@@ -135,7 +135,7 @@ public class SampleActivity extends Activity
 		{
 			if (resultCode == Activity.RESULT_OK)
 			{
-				final String txHash = PeercoinIntegration.transactionHashFromResult(data);
+				final String txHash = SchillingcoinIntegration.transactionHashFromResult(data);
 				if (txHash != null)
 				{
 					final SpannableStringBuilder messageBuilder = new SpannableStringBuilder("Transaction hash:\n");
@@ -143,7 +143,7 @@ public class SampleActivity extends Activity
 					messageBuilder.setSpan(new TypefaceSpan("monospace"), messageBuilder.length() - txHash.length(), messageBuilder.length(),
 							Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-					if (PeercoinIntegration.paymentFromResult(data) != null)
+					if (SchillingcoinIntegration.paymentFromResult(data) != null)
 						messageBuilder.append("\n(also a BIP70 payment message was received)");
 
 					donateMessage.setText(messageBuilder);

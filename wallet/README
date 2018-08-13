@@ -4,33 +4,33 @@ Your wallet contains your private keys and various transaction related metadata.
 It is stored in app-private storage:
 
     Mainnet:
-/data/data/com.matthewmitchell.peercoin_android_wallet/files/wallet-protobuf
+/data/data/com.matthewmitchell.Schillingcoin_android_wallet/files/wallet-protobuf
 (MODE_PRIVATE)
 
     Testnet:
-/data/data/com.matthewmitchell.peercoin_android_wallet_test/files/wallet-protobuf-testnet
+/data/data/com.matthewmitchell.Schillingcoin_android_wallet_test/files/wallet-protobuf-testnet
 (MODE_WORLD_READABLE | MODE_WORLD_WRITEABLE)
 
 The wallet file format is not compatible to wallet.dat (Satoshi client). Rather,
 it uses a custom protobuf format which should be compatible between clients
-using peercoinj.
+using Schillingcoinj.
 
 Certain actions cause automatic rolling backups of your wallet to app-private
 storage:
 
     Mainnet:
-/data/data/com.matthewmitchell.peercoin_android_wallet/files/key-backup-protobuf
+/data/data/com.matthewmitchell.Schillingcoin_android_wallet/files/key-backup-protobuf
 (MODE_PRIVATE)
 
     Testnet:
-/data/data/com.matthewmitchell.peercoin_android_wallet_test/files/key-backup-protobuf-testnet
+/data/data/com.matthewmitchell.Schillingcoin_android_wallet_test/files/key-backup-protobuf-testnet
 (MODE_PRIVATE)
 
 Your wallet can be manually backed up to and restored from external storage:
 
-    Mainnet: /sdcard/Download/peercoin-wallet-backup-<yyyy-MM-dd>
+    Mainnet: /sdcard/Download/Schillingcoin-wallet-backup-<yyyy-MM-dd>
 
-    Testnet: /sdcard/Download/peercoin-wallet-backup-testnet-<yyyy-MM-dd>
+    Testnet: /sdcard/Download/Schillingcoin-wallet-backup-testnet-<yyyy-MM-dd>
 
 If you want to recover coins from manual backups and for whatever reason you
 cannot use the app itself to restore from the backup, see the separate
@@ -42,7 +42,7 @@ DEBUGGING
 Wallet file for Testnet can be pulled from an (even un-rooted) device using
 
     adb pull
-/data/data/com.matthewmitchell.peercoin_android_wallet_test/files/wallet-protobuf-testnet
+/data/data/com.matthewmitchell.Schillingcoin_android_wallet_test/files/wallet-protobuf-testnet
 
 Log messages can be viewed by
 
@@ -86,13 +86,13 @@ build-tools-20.0.0,android-10,android-16,extra-android-m2repository
 
 to download the necessary API level.
 
-Finally, you can build Peercoin Wallet and sign it with your development key.
+Finally, you can build Schillingcoin Wallet and sign it with your development key.
 Again in your workspace, use
 
     # first time only git clone -b master
-https://github.com/MatthewLM/peercoin-android-wallet peercoin-wallet
+https://github.com/MatthewLM/Schillingcoin-android-wallet Schillingcoin-wallet
 
-    # each time cd peercoin-wallet git pull mvn clean install
+    # each time cd Schillingcoin-wallet git pull mvn clean install
 
 To upload the app to your Android device, use
 
@@ -113,7 +113,7 @@ with ProGuard and the wallet file is protected against access from non-root
 users. In the code repository, it lives in a separate 'prod' branch that gets
 rebased against master with each released version.
 
-    # each time cd peercoin-wallet git fetch origin git checkout origin/prod mvn
+    # each time cd Schillingcoin-wallet git fetch origin git checkout origin/prod mvn
 clean install -Prelease -Dandroid.sdk.path=<path to your android sdk>
 
 
@@ -124,8 +124,8 @@ Make sure you've got Eclipse Luna with ADT 23 installed.
 Use Git to check out the project and an Android library dependency to your
 workspace:
 
-    # clone Peercoin Wallet project git clone -b master
-https://github.Com.matthewmitchell/AndroidWallet.git peercoin-wallet
+    # clone Schillingcoin Wallet project git clone -b master
+https://github.Com.matthewmitchell/AndroidWallet.git Schillingcoin-wallet
 
     # clone ActionBarSherlock library project git clone
 https://github.com/JakeWharton/ActionBarSherlock.git action-bar-sherlock cd
@@ -133,7 +133,7 @@ action-bar-sherlock git checkout 4.1.0
 
 Use the maven-eclipse-plugin to create Eclipse project files:
 
-    cd peercoin-wallet mvn clean install eclipse:eclipse
+    cd Schillingcoin-wallet mvn clean install eclipse:eclipse
 
 Optional: In the generated .classpath, remove the
 org.eclipse.jdt.launching.JRE_CONTAINER classpath entry. It does not belong
@@ -149,7 +149,7 @@ Properties -> Java Compiler -> Errors/Warnings -> Annotations -> Missing
 
 NFC (Near field communication)
 
-Peercoin Wallet supports reading Peercoin requests via NFC, either from a
+Schillingcoin Wallet supports reading Schillingcoin requests via NFC, either from a
 passive NFC tag or from another NFC capable Android device that is requesting
 coins.
 
@@ -166,25 +166,25 @@ writers should work as well, let us know if you succeed.
 - Some tags have less than 50 bytes capacity, those won't work. 1 KB tags
   recommended.
 
-- The tag needs to contain a Peercoin URI. You can construct one with the
+- The tag needs to contain a Schillingcoin URI. You can construct one with the
   "Request coins" dialog, then share with messaging or email. You can also
 construct the URI manually. Example for Mainnet:
-peercoin:1G2Y2jP5YFZ5RGk2PXaeWwbeA5y1ZtFhoL
+Schillingcoin:1G2Y2jP5YFZ5RGk2PXaeWwbeA5y1ZtFhoL
 
 - The type of the message needs to be URI or URL (not Text).
 
 - If you put your tag at a public place, don't forget to enable write protect.
-  Otherwise, someone could overwrite the tag with his own Peercoin address.
+  Otherwise, someone could overwrite the tag with his own Schillingcoin address.
 
-PEERCOINJ
+SchillingcoinJ
 
-peercoinj is used for Peercoin specific logic:
+Schillingcoinj is used for Schillingcoin specific logic:
 
-    https://github.com/MatthewLM/peercoinj
+    https://github.com/MatthewLM/Schillingcoinj
 
 EXCHANGE RATES
 
 Exchange rates are taken from:
 
-    Peercoin to USD: btc-e.com USD to Other Fiat: yahooapis.com
+    Schillingcoin to USD: btc-e.com USD to Other Fiat: yahooapis.com
 
