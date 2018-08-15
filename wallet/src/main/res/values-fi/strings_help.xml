@@ -3,11 +3,11 @@
   <string name="help_wallet">
 <![CDATA[
 		<p>
-			Ruudun vasemmassa ylänurkassa näkyy sinun valittu Schillingcoin-osoite, joka muiden täytyy tietää lähettääkseen sinulle Schillingcoineja.
+			Ruudun vasemmassa ylänurkassa näkyy sinun valittu SchillingCoin-osoite, joka muiden täytyy tietää lähettääkseen sinulle SchillingCoineja.
 			Napsauta vaihtaaksesi osoitetta.
 		</p>
 		<p>
-			QR-koodi oikealla sisältää Schillingcoin-osoitteesi, jonka toinen osapuoli voi skannata.
+			QR-koodi oikealla sisältää SchillingCoin-osoitteesi, jonka toinen osapuoli voi skannata.
 			Napsauta QR-koodia saadaksesi suuremman kuvan siitä.
 		</p>
 		<p>
@@ -22,7 +22,7 @@
 			Vetäise oikealle tai vasemmalle asettaaksesi suodattimia listaan.
 		</p>
 		<p>
-			Voit lähettää tai pyytää Schillingcoineja napsauttamalla näppäimiä toimintapalkissa.
+			Voit lähettää tai pyytää SchillingCoineja napsauttamalla näppäimiä toimintapalkissa.
 			Lisää valintoja löydät asetukset -valikosta.
 		</p>
 	]]>
@@ -30,19 +30,19 @@
   <string name="help_request_coins">
 <![CDATA[
 		<p>
-			Käyttämällä tätä dialogia, voit pyytää Schillingcoineja toiselta henkilöltä, jolla pitäisi jo olla Schillingcoin Wallet asennettuna.
+			Käyttämällä tätä dialogia, voit pyytää SchillingCoineja toiselta henkilöltä, jolla pitäisi jo olla SchillingCoin Wallet asennettuna.
 		</p>
 		<p>
-			Ensiksi, voit syöttää jonkun määrän Schillingcoineja, joita pyydät.
+			Ensiksi, voit syöttää jonkun määrän SchillingCoineja, joita pyydät.
 		</p>
 		<p>
 			Sen jälkeen jonkun toisen on skannattava luotu QR koodi.
 			Tai voit lähettää pyynnön etäiselle henkilölle \'jaa\' näppäimellä toimintapalkissa.
-			Toisen henkilön täytyy napsauttaa Schillingcoin-URL-osoitetta.
+			Toisen henkilön täytyy napsauttaa SchillingCoin-URL-osoitetta.
 			
 		</p>
 		<p>
-			Joka tapauksessa toiselle henkilölle esitetään dialogi Schillingcoinien lähettämisestä, jossa kaikki kentät on jo täytetty.
+			Joka tapauksessa toiselle henkilölle esitetään dialogi SchillingCoinien lähettämisestä, jossa kaikki kentät on jo täytetty.
 			Jos hän hyväksyy sen, hänen täytyy vain lähettää maksu.
 		</p>
 	]]>
@@ -50,16 +50,16 @@
   <string name="help_send_coins">
 <![CDATA[
 		<p>
-			Olet käynnistänyt Schillingcoinien lähetysprosessin.
-			Päädyit tänne joko päänäkymän kautta tai napsauttamalla Schillingcoin-URL-osoitetta mobiiliselaimellasi.
+			Olet käynnistänyt SchillingCoinien lähetysprosessin.
+			Päädyit tänne joko päänäkymän kautta tai napsauttamalla SchillingCoin-URL-osoitetta mobiiliselaimellasi.
 		</p>
 		<p>
-			Ensiksi syötät Schillingcoin-osoitteen, jonne on maksettava.
+			Ensiksi syötät SchillingCoin-osoitteen, jonne on maksettava.
 			Osoite tulee automaattisesti loppuunkirjoitetuksi tallennetuista tiedoista osoitekirjasta.
-			Voit myös skannata QR-koodeja, joissa on Schillingcoin osoite tai Schillingcoin pyyntöjä napsauttamalla QR-näppäintä toimintavalikossa.
+			Voit myös skannata QR-koodeja, joissa on SchillingCoin osoite tai SchillingCoin pyyntöjä napsauttamalla QR-näppäintä toimintavalikossa.
 		</p>
 		<p>
-			Seuraavaksi näet kuinka paljon sinulla on Schillingcoineja käytettävissä tällä hetkellä.
+			Seuraavaksi näet kuinka paljon sinulla on SchillingCoineja käytettävissä tällä hetkellä.
 			Muutos päänäkymän saldoon ei ole vielä vahvistettu, eikä niitä rahoja voi vielä käyttää.
 		</p>
 		<p>
@@ -67,7 +67,7 @@
 		</p>
 		<p>
 			Voit asettaa maksun olematta verkossa, eli ollessasi offlinessa.
-			Se lähetetään käynnistäessäsi Schillingcoin Wallet:in uudestaan seuraavan kerran.
+			Se lähetetään käynnistäessäsi SchillingCoin Wallet:in uudestaan seuraavan kerran.
 			Jos haluat maksun menevän mahdollisimman nopeasti, varmista, että sinulla on hyvä yhteys (kuten WLAN).
 		</p>
 		<p>
@@ -83,8 +83,8 @@
 			<b>Tärkeitä turvallisuus huomioita:</b>
 		</p>
 		<p>
-			Schillingcoinit sijaitsevat laitteessasi.
-			<b>Jos hukkaat sen, menetät Schillingcoinisi.</b>
+			SchillingCoinit sijaitsevat laitteessasi.
+			<b>Jos hukkaat sen, menetät SchillingCoinisi.</b>
 		</p>
 		<p>
 			Tämä tarkoittaa, että <b>sinun on varmuuskopioitava lompakkosi</b>!
@@ -92,12 +92,12 @@
 			Pidä varmuuskopiosi turvassa ja muista salasana.
 		</p>
 		<p>
-			<b>Ennen poistamista</b> (tai ennen sovellusdatan poistamista/laitteen tyhjentämistä), <b>siirrä Schillingcoinisi toiseen lompakkoon</b>.
-			Jäljelle jäävät Schillingcoinit katoavat.
+			<b>Ennen poistamista</b> (tai ennen sovellusdatan poistamista/laitteen tyhjentämistä), <b>siirrä SchillingCoinisi toiseen lompakkoon</b>.
+			Jäljelle jäävät SchillingCoinit katoavat.
 		</p>
 		<p>
 			<b>Maksuja ei voi peruuttaa</b>.
-			Jos lähetät Schillingcoinisi tyhjyyteen, ei ole käytännössä mitään keinoa saada niitä takaisin.
+			Jos lähetät SchillingCoinisi tyhjyyteen, ei ole käytännössä mitään keinoa saada niitä takaisin.
 		</p>
 		<p>
 			<b>Pidä mobiililaitteesi turvassa!</b>

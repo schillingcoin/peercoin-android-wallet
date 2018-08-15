@@ -3,11 +3,11 @@
   <string name="help_wallet">
 <![CDATA[
 		<p>
-			Horní levá část obrazovky zobrazuje Vaši aktuální Schillingcoin bilanci včetně odpovídající částky ve vaší lokální měně.
+			Horní levá část obrazovky zobrazuje Vaši aktuální SchillingCoin bilanci včetně odpovídající částky ve vaší lokální měně.
 			Kliknutím na částku přejdete do seznamu lokálních měn, kde si můžete vybrat jinou.
 		</p>
 		<p>
-			QR kód na pravé straně obsahuje Vaši Schillingcoin adresu a může být použita pro naskenování druhou stranou.
+			QR kód na pravé straně obsahuje Vaši SchillingCoin adresu a může být použita pro naskenování druhou stranou.
 			Klepněte na QR kód pro zobrazení větší verze.
 		</p>
 		<p>
@@ -17,7 +17,7 @@
 			Táhnutím vlevo či vpravo je možné aplikovat na seznam filtr.
 		</p>
 		<p>
-			Můžete poslat nebo si vyžádat Schillingcoiny klepnutím na patřičné tlačítko v akční nabídce.
+			Můžete poslat nebo si vyžádat SchillingCoiny klepnutím na patřičné tlačítko v akční nabídce.
 			Více možností je v nabídce nastavení.
 		</p>
 	]]>
@@ -25,10 +25,10 @@
   <string name="help_request_coins">
 <![CDATA[
 		<p>
-			Pomocí tohoto dialogu můžete vyžádat Schillingcoiny od někoho jiného (kdo by měl také mít nainstalovanou aplikaci Schillingcoin Wallet).
+			Pomocí tohoto dialogu můžete vyžádat SchillingCoiny od někoho jiného (kdo by měl také mít nainstalovanou aplikaci SchillingCoin Wallet).
 		</p>
 		<p>
-			Nejprve zadejte množství Schillingcoinů, které chcete vyžádat.
+			Nejprve zadejte množství SchillingCoinů, které chcete vyžádat.
 		</p>
 		<p>
 			Potom můžete protistraně nabídnout vygenerovaný QR kód k oskenování,
@@ -36,7 +36,7 @@
 			Druhá strana potom klikne na získanou adresu.
 		</p>
 		<p>
-			V obou případech bude odesílatel uvidí dialog na zasílání Schillingcoinů s předvzplněnými údaji.
+			V obou případech bude odesílatel uvidí dialog na zasílání SchillingCoinů s předvzplněnými údaji.
 			Pokud souhlasí, potvrdí zadané informace a dojde k transakci.
 		</p>
 	]]>
@@ -44,7 +44,7 @@
   <string name="help_send_coins">
 <![CDATA[
 		<p>
-			Právě jste zahájil zasílání Schillingcoinů.
+			Právě jste zahájil zasílání SchillingCoinů.
 			Sem jste se musel dostat buď přes hlavní obrazovku aplikace, nebo pomocí klepnutí na speciální adresu v prohlížeči.
 		</p>
 		<p>
@@ -53,7 +53,7 @@
 			Můžete také naskenovat QR kód s adresou peněženky nebo požadavek na zaplacení stisknutím tlačítka s QR kódem.
 		</p>
 		<p>
-			V dalším kroku uvidíte, kolik Schillingcoinů můžete momentálně utratit.
+			V dalším kroku uvidíte, kolik SchillingCoinů můžete momentálně utratit.
 			Jakýkoliv rozdíl vůči zůstatku zobrazenému na výchozí obrazovce je stále nepotvrzen a tudíž nemůže být utracen.
 		</p>
 		<p>
@@ -61,7 +61,7 @@
 		</p>
 		<p>
 			Transakce můžete provádět, i když jste právě offline.
-			Budou provedeny při dalším spuštění aplikace Schillingcoin Wallet.
+			Budou provedeny při dalším spuštění aplikace SchillingCoin Wallet.
 			Pokud chcete transakci provést co nejrychleji, ujistěte se, že máte rychlé připojení (například jste připojeni pomocí bezdrátové sítě).
 		</p>
 		<p>
@@ -74,29 +74,29 @@
   <string name="help_safety">
 <![CDATA[
 		<p>
-			Několik slov o bezpečnosti vašich Schillingcoinů:
+			Několik slov o bezpečnosti vašich SchillingCoinů:
 		</p>
 		<p>
-			Schillingcoiny v aplikaci Schillingcoin Wallet jsou uloženy ve vašem zařízení.
-			<b>Pokud o zařízení přijdete, přijdete i o Schillingcoiny v něm.</b>
+			SchillingCoiny v aplikaci SchillingCoin Wallet jsou uloženy ve vašem zařízení.
+			<b>Pokud o zařízení přijdete, přijdete i o SchillingCoiny v něm.</b>
 			Stejně jako při ztrátě normální peněženky.
 		</p>
 		<p>
-			<b>Před odinstalací aplikace Schillingcoin Wallet</b> (nebo při odstraňování dat/wipe), <b> si přepošlete zůstatek do jiné peněženky</b>.
+			<b>Před odinstalací aplikace SchillingCoin Wallet</b> (nebo při odstraňování dat/wipe), <b> si přepošlete zůstatek do jiné peněženky</b>.
 			Jakékoliv zůstavší Bitcony budou nenávratně ztraceny.
 		</p>
 		<p>
 			<b>Transakce nemohou být zrušeny</b>.
-			Pokud pošlete Schillingcoiny někam neznámo kam, neexistuje možnost, jak je získat zpět, jedině byste znali příjemce a on měl zrovna náladu je poctivě vrátit.
+			Pokud pošlete SchillingCoiny někam neznámo kam, neexistuje možnost, jak je získat zpět, jedině byste znali příjemce a on měl zrovna náladu je poctivě vrátit.
 		</p>
 		<p>
 			<b>Udržujte vašeho Androida v bezpečí!</b>
 			Instalujte pouze aplikace, kterým plně důvěřujete.
-			Existují škodlivé aplikace, které vás mohou o vaše Schillingcoiny připravit.
+			Existují škodlivé aplikace, které vás mohou o vaše SchillingCoiny připravit.
 		</p>
 		<p>
 			Neriskujte zbytečně!
-			<b>V aplikaci Schillingcoin Wallet mějte pouze malé částky</b> pro rychlé použití.
+			<b>V aplikaci SchillingCoin Wallet mějte pouze malé částky</b> pro rychlé použití.
 		</p>
 	]]>
 	</string>

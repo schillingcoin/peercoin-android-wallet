@@ -122,7 +122,7 @@ public class WalletApplication extends Application
             @Override
             public void uncaughtException(final Thread thread, final Throwable throwable)
             {
-                log.info("Schillingcoinj uncaught exception", throwable);
+                log.info("SchillingCoinj uncaught exception", throwable);
                 CrashReporter.saveBackgroundTrace(throwable, packageInfo);
             }
         };

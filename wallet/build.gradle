@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 
-description = 'Schillingcoin Wallet'
+description = 'SchillingCoin Wallet'
 
 android {
     compileSdkVersion 27

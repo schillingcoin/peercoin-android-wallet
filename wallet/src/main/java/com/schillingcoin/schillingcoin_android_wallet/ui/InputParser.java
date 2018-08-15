@@ -85,7 +85,7 @@ public abstract class InputParser
         @Override
         public void parse()
         {
-            if (input.startsWith("ppcoin:-") || input.startsWith("Schillingcoin:-"))
+            if (input.startsWith("ppcoin:-") || input.startsWith("SchillingCoin:-"))
             {
                 try
                 {
@@ -112,7 +112,7 @@ public abstract class InputParser
                     error(R.string.input_parser_invalid_paymentrequest, x.getMessage());
                 }
             }
-            else if (input.startsWith("ppcoin:") || input.startsWith("Schillingcoin:"))
+            else if (input.startsWith("ppcoin:") || input.startsWith("SchillingCoin:"))
             {
                 try
                 {
@@ -125,12 +125,12 @@ public abstract class InputParser
                 }
                 catch (final SchillingcoinURIParseException x)
                 {
-                    log.info("got invalid Schillingcoin uri: '" + input + "'", x);
+                    log.info("got invalid SchillingCoin uri: '" + input + "'", x);
 
-                    error(R.string.input_parser_invalid_Schillingcoin_uri, input);
+                    error(R.string.input_parser_invalid_SchillingCoin_uri, input);
                 }
 
-            } else if (PATTERN_Schillingcoin_ADDRESS.matcher(input).matches()) {
+            } else if (PATTERN_SchillingCoin_ADDRESS.matcher(input).matches()) {
 
                 PaymentIntent pi = PaymentIntent.fromAddress(input);
 
@@ -448,7 +448,7 @@ public abstract class InputParser
         dialog.show();
     }
 
-    private static final Pattern PATTERN_Schillingcoin_ADDRESS = Pattern.compile("[" + new String(Base58.ALPHABET) + "]{20,40}");
+    private static final Pattern PATTERN_SchillingCoin_ADDRESS = Pattern.compile("[" + new String(Base58.ALPHABET) + "]{20,40}");
     private static final Pattern PATTERN_DUMPED_PRIVATE_KEY_UNCOMPRESSED = Pattern.compile((Constants.NETWORK_PARAMETERS.getId().equals(
                     NetworkParameters.ID_MAINNET) ? "5" : "9")
             + "[" + new String(Base58.ALPHABET) + "]{50}");

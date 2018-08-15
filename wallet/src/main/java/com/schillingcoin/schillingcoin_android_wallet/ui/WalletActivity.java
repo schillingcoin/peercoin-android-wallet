@@ -566,7 +566,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		if (Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.exists() && Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.isDirectory())
 			for (final File file : Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.listFiles()) {
 				
-				if (!file.getName().contains("Schillingcoin"))
+				if (!file.getName().contains("SchillingCoin"))
 					continue;
 				
 				if (WalletUtils.BACKUP_FILE_FILTER.accept(file) || WalletUtils.KEYS_FILE_FILTER.accept(file)

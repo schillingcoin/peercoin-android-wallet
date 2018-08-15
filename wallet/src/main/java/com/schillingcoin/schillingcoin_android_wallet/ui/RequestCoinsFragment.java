@@ -416,8 +416,8 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 
 	private void handleCopy()
 	{
-		final Uri request = Uri.parse(determineSchillingcoinRequestStr(false));
-		clipboardManager.setPrimaryClip(ClipData.newRawUri("Schillingcoin payment request", request));
+		final Uri request = Uri.parse(determineSchillingCoinRequestStr(false));
+		clipboardManager.setPrimaryClip(ClipData.newRawUri("SchillingCoin payment request", request));
 		log.info("payment request copied to clipboard: {}", request);
 		activity.toast(R.string.request_coins_clipboard_msg);
 	}
@@ -426,7 +426,7 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 	{
 		final Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setType("text/plain");
-		intent.putExtra(Intent.EXTRA_TEXT, determineSchillingcoinRequestStr(false));
+		intent.putExtra(Intent.EXTRA_TEXT, determineSchillingCoinRequestStr(false));
 		startActivity(Intent.createChooser(intent, getString(R.string.request_coins_share_dialog_title)));
 	}
 
@@ -434,7 +434,7 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 	{
 		final ComponentName component = new ComponentName(activity, SendCoinsActivity.class);
 		final PackageManager pm = activity.getPackageManager();
-		final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(determineSchillingcoinRequestStr(false)));
+		final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(determineSchillingCoinRequestStr(false)));
 
 		try
 		{
@@ -459,16 +459,16 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 		if (!isResumed())
 			return;
 
-		final String SchillingcoinRequest = determineSchillingcoinRequestStr(true);
+		final String SchillingCoinRequest = determineSchillingCoinRequestStr(true);
 		final byte[] paymentRequest = determinePaymentRequest(true);
 
 		// update qr-code
 		final int size = getResources().getDimensionPixelSize(R.dimen.bitmap_dialog_qr_size);
 		final String qrContent;
 		if (config.getQrPaymentRequestEnabled())
-			qrContent = "Schillingcoin:-" + Qr.encodeBinary(paymentRequest);
+			qrContent = "SchillingCoin:-" + Qr.encodeBinary(paymentRequest);
 		else
-			qrContent = SchillingcoinRequest;
+			qrContent = SchillingCoinRequest;
 		qrCodeBitmap = Qr.bitmap(qrContent, size);
 		qrView.setImageBitmap(qrCodeBitmap);
 
@@ -485,7 +485,7 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 		paymentRequestRef.set(paymentRequest);
 	}
 
-	private String determineSchillingcoinRequestStr(final boolean includeBluetoothMac)
+	private String determineSchillingCoinRequestStr(final boolean includeBluetoothMac)
 	{
 		final Coin amount = amountCalculatorLink.getAmount();
 

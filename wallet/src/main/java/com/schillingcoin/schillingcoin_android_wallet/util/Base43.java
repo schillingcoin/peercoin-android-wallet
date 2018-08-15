@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 import com.google.common.base.Charsets;
 
 /**
- * Base43, derived from Schillingcoinj Base58
+ * Base43, derived from SchillingCoinj Base58
  * 
  * @author Andreas Schildbach
  */

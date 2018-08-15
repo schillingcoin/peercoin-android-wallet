@@ -4,16 +4,16 @@
 	<string name="help_wallet">
 <![CDATA[
 		<p>
-			V ľavej hornej časti obrazovky je Vaša aktuálna Schillingcoin adresa, túto adresu potrebuje poznať odosielateľ, aby Vám mohol poslať Schillingcoiny.
+			V ľavej hornej časti obrazovky je Vaša aktuálna SchillingCoin adresa, túto adresu potrebuje poznať odosielateľ, aby Vám mohol poslať SchillingCoiny.
 			Kliknutím na adresu ju môžte zmeniť.
 		</p>
 		<p>
-			QR kód na pravej strane obsahuje Vašu Schillingcoin adresu, odosielateľ ho môže jednoducho naskenovať.
+			QR kód na pravej strane obsahuje Vašu SchillingCoin adresu, odosielateľ ho môže jednoducho naskenovať.
 			Kliknite na QR kód, aby ste ho zväčšili.
 		</p>
 		<p>
 			V strede obrazovky je zobrazený aktuálny zostatok.
-			Hodnota Vašich Schillingcoinov je zobrazená aj v inej zvolenej mene.
+			Hodnota Vašich SchillingCoinov je zobrazená aj v inej zvolenej mene.
 			Kliknutím na zostatok zobrazíte zoznam cudzích mien, následným kliknutím na menu ju môžte nastaviť ako predvolenú.
 		</p>
 		<p>
@@ -23,7 +23,7 @@
 			Ťahom vľavo a vpravo môžte filtrovať prijaté a odoslané platby.
 		</p>
 		<p>
-			Kliknutím na tlačidlá naspodku môžte poslať alebo vyžiadať Schillingcoiny.
+			Kliknutím na tlačidlá naspodku môžte poslať alebo vyžiadať SchillingCoiny.
 			Ďalšie možnosti sú v ponuke nastavení.
 		</p>
 	]]>
@@ -31,18 +31,18 @@
 	<string name="help_request_coins">
 <![CDATA[
 		<p>
-			Na tejto obrazovke môžete vyžiadať Schillingcoiny od niekoho iného (kto má nainštalovanú aplikáciu Schillingcoin Wallet).
+			Na tejto obrazovke môžete vyžiadať SchillingCoiny od niekoho iného (kto má nainštalovanú aplikáciu SchillingCoin Wallet).
 		</p>
 		<p>
-			Najprv zadajte sumu Schillingcoinov, ktoré chcete vyžiadať.
+			Najprv zadajte sumu SchillingCoinov, ktoré chcete vyžiadať.
 		</p>
 		<p>
 			Potom dajte druhej strane naskenovať vygenerovaný QR kód
 			alebo môžte svoju žiadosť poslať použitím tlačidla zdieľať.
-			Druhá strana potom klikne na Schillingcoin URL.
+			Druhá strana potom klikne na SchillingCoin URL.
 		</p>
 		<p>
-			V oboch prípadoch druhá strana uvidí predvyplnenú obrazovku na odosielanie Schillingcoinov.
+			V oboch prípadoch druhá strana uvidí predvyplnenú obrazovku na odosielanie SchillingCoinov.
 			Ak s transakciou súhlasí, tak ju iba potvrdí.
 		</p>
 	]]>
@@ -50,17 +50,17 @@
 	<string name="help_send_coins">
 <![CDATA[
 		<p>
-			Práve ste začali proces odosielania Schillingcoinov.
-			Dostali ste sa sem z hlavnej obrazovky alebo kliknutím na Schillingcoin adresu v prehliadači.
+			Práve ste začali proces odosielania SchillingCoinov.
+			Dostali ste sa sem z hlavnej obrazovky alebo kliknutím na SchillingCoin adresu v prehliadači.
 		</p>
 		<p>
 			Najprv zadajte adresu, na ktorú chcete odoslať platbu.
 			Ak sa adresa nachádza v adresári, tak sa automaticky doplní.
-			Kliknutím na ikonu fotoaparátu môžete naskenovať QR kód s Schillingcoin adresou alebo požiadavkou na zaplatenie.
+			Kliknutím na ikonu fotoaparátu môžete naskenovať QR kód s SchillingCoin adresou alebo požiadavkou na zaplatenie.
 		</p>
 		<p>
-			Ďalej vidíte koľko Schillingcoinov môžete aktuálne minúť.
-			Rozdiel medzi zostatkom na hlavnej obrazovke a počtom Schillingcoinov, ktoré môžete minúť tvoria nepotvrdené transakcie.
+			Ďalej vidíte koľko SchillingCoinov môžete aktuálne minúť.
+			Rozdiel medzi zostatkom na hlavnej obrazovke a počtom SchillingCoinov, ktoré môžete minúť tvoria nepotvrdené transakcie.
 		</p>
 		<p>
 			Nakoniec zadajte sumu platby.
@@ -83,8 +83,8 @@
 			<b>Dôležité informácie o bezpečnosti:</b>
 		</p>
 		<p>
-			Schillingcoiny sú uložené na Vašom zariadení.
-			<b>Ak zariadenie stratíte, prídete o všetky svoje Schillingcoiny.</b>
+			SchillingCoiny sú uložené na Vašom zariadení.
+			<b>Ak zariadenie stratíte, prídete o všetky svoje SchillingCoiny.</b>
 		</p>
 		<p>
 			To znamená, že by ste mali <b>zálohovať svoju peňaženku</b>!
@@ -92,12 +92,12 @@
 			Svoju zálohu bezpečne uchovajte a nezabudnite heslo.
 		</p>
 		<p>
-			<b>Pred odinštalovaním</b> (alebo vymazaním dát/obnovením továrenských nastavení), <b>odošlite svoje Schillingcoiny do inej peňaženky</b>.
-			Inak o svoje Schillingcoiny prídete.
+			<b>Pred odinštalovaním</b> (alebo vymazaním dát/obnovením továrenských nastavení), <b>odošlite svoje SchillingCoiny do inej peňaženky</b>.
+			Inak o svoje SchillingCoiny prídete.
 		</p>
 		<p>
 			<b>Platby sa nedajú stornovať</b>.
-			Ak pošlete svoje Schillingcoiny na nesprávnu adresu, je takmer nemožné získať ich späť.
+			Ak pošlete svoje SchillingCoiny na nesprávnu adresu, je takmer nemožné získať ich späť.
 		</p>
 		<p>
 			<b>Chráňte si svoje zariadenie!</b>

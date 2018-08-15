@@ -1,19 +1,19 @@
-Schillingcoin Wallet
+SchillingCoin Wallet
 The original, since 2011. Free software, GPLv3 licensed.
-Source:  https://github.com/schildbach/Schillingcoin-wallet
-Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet
+Source:  https://github.com/schildbach/SchillingCoin-wallet
+Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet
 
 
 === FORKS THAT ADD FEATURES ===
 
 
-KnC Schillingcoin Wallet
-Forked in February 2014. KnC added the ability to send Schillingcoins to your phone book contacts.
- Source:  https://github.com/kncgroup/Schillingcoin-wallet
+KnC SchillingCoin Wallet
+Forked in February 2014. KnC added the ability to send SchillingCoins to your phone book contacts.
+ Source:  https://github.com/kncgroup/SchillingCoin-wallet
  Install: https://play.google.com/store/apps/details?id=com.kncwallet.wallet
 
 
-Hive Schillingcoin Wallet
+Hive SchillingCoin Wallet
 Forked in February 2014. Hive added a marketplace and a contacts feature.
  Source:  https://github.com/hivewallet/hive-android
  Install: https://play.google.com/store/apps/details?id=com.hivewallet.androidclient.wallet
@@ -26,9 +26,9 @@ blockchain.info. Guess its source is pretty much un-mergable.
  Install: https://play.google.com/store/apps/details?id=piuk.blockchain.android
 
 
-Schillingcoin Wallet Li
+SchillingCoin Wallet Li
 The only added feature seems to be a sliding menu, but it fails to show any screenshots. Source is un-mergable.
- Source:  https://code.google.com/p/Schillingcoin-wallet-li/
+ Source:  https://code.google.com/p/SchillingCoin-wallet-li/
  Install: https://play.google.com/store/apps/details?id=com.mypgwali
 
 
@@ -37,22 +37,22 @@ The only added feature seems to be a sliding menu, but it fails to show any scre
 
 Litecoin Wallet (old)
  Source:  https://github.com/hank/litecoin-wallet
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet.litecoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet.litecoin
 
 
 Feathercoin Wallet
  Source:  https://github.com/hank/feathercoin-wallet
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet.feathercoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet.feathercoin
 
 
 DigiByte Wallet
  Source:  https://github.com/digibyte/DigiByteAndroid
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet.digibyte
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet.digibyte
 
 
 GoldCoin Wallet
  Source:  https://github.com/goldcoin/goldcoin-android/
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet.goldcoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet.goldcoin
 
 
 Dogecoin Wallet
@@ -61,8 +61,8 @@ Dogecoin Wallet
 
 
 Litecoin Wallet
- Source:  https://github.com/Litecoin-Java/Schillingcoin-wallet
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet_ltc
+ Source:  https://github.com/Litecoin-Java/SchillingCoin-wallet
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet_ltc
 
 
 Franko Wallet
@@ -77,12 +77,12 @@ Digitalcoin Wallet
 
 Megacoin Wallet
  Source:  https://github.com/HashEngineering/Megacoin-wallet
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet.megacoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet.megacoin
 
 
 Infinitecoin Wallet
  Source:  https://github.com/HashEngineering/infinitecoin-wallet
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet.infinitecoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet.infinitecoin
 
 
 Quark Wallet
@@ -112,7 +112,7 @@ Fedoracoin Wallet
 
 Earthcoin Wallet
  Source:  https://github.com/l0rdicon/EarthcoinAndroid
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet.earthcoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet.earthcoin
 
 
 Reddcoin Wallet
@@ -127,7 +127,7 @@ DopeCoin Wallet
 
 Vertcoin Wallet
  Source:  https://github.com/dayreiner/vertcoin-wallet
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet.vertcoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet.vertcoin
 
 
 Zetacoin Wallet
@@ -156,8 +156,8 @@ Casinocoin Wallet
 
 
 Machinecoin Wallet
- Source:  https://github.com/Gitju/Schillingcoin-wallet
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet_mac
+ Source:  https://github.com/Gitju/SchillingCoin-wallet
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet_mac
 
 
 Monacoin Wallet
@@ -174,9 +174,9 @@ Rimbit Wallet
  Source:  https://github.com/Rimbit/AndroidWallet
  Install: https://play.google.com/store/apps/details?id=com.rimbit.android_wallet
  
-Schillingcoin Wallet
- Source:  https://github.com/MatthewLM/Schillingcoin-android-wallet
- Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.Schillingcoin_android_wallet
+SchillingCoin Wallet
+ Source:  https://github.com/MatthewLM/SchillingCoin-android-wallet
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.SchillingCoin_android_wallet
 
 Lemurcoin Wallet
  Source:  https://github.com/esotericizm/Lemurcoin-wallet

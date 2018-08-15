@@ -91,9 +91,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -104,9 +101,6 @@ import android.widget.EditText;
 import android.widget.FilterQueryProvider;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
-import android.widget.ArrayAdapter;
 
 import com.schillingcoin.schillingcoin_android_wallet.AddressBookProvider;
 import com.schillingcoin.schillingcoin_android_wallet.Configuration;
@@ -116,7 +110,7 @@ import com.schillingcoin.schillingcoin_android_wallet.ExchangeRatesProvider.Wall
 import com.schillingcoin.schillingcoin_android_wallet.WalletApplication;
 import com.schillingcoin.schillingcoin_android_wallet.data.PaymentIntent;
 import com.schillingcoin.schillingcoin_android_wallet.data.PaymentIntent.Standard;
-import com.schillingcoin.schillingcoin_android_wallet.integration.android.SchillingcoinIntegration;
+import com.schillingcoin.schillingcoin_android_wallet.integration.android.SchillingCoinIntegration;
 import com.schillingcoin.schillingcoin_android_wallet.offline.DirectPaymentTask;
 import com.schillingcoin.schillingcoin_android_wallet.ui.AbstractBindServiceActivity;
 import com.schillingcoin.schillingcoin_android_wallet.ui.AddressAndLabel;
@@ -582,7 +576,7 @@ public final class SendCoinsFragment extends Fragment
                         (Intent.ACTION_VIEW.equals(action)
                              || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)
                         ) && intentUri != null && (
-                            "ppcoin".equals(scheme) || "Schillingcoin".equals(scheme)
+                            "ppcoin".equals(scheme) || "SchillingCoin".equals(scheme)
                             || ShapeShift.getCoin(scheme) != null
                         )
                     ) {
@@ -592,7 +586,7 @@ public final class SendCoinsFragment extends Fragment
                         final byte[] ndefMessagePayload = Nfc.extractMimePayload(PaymentProtocol.MIMETYPE_PAYMENTREQUEST, ndefMessage);
                         initStateFromPaymentRequest(mimeType, ndefMessagePayload);
                     }else if ((Intent.ACTION_VIEW.equals(action)) && PaymentProtocol.MIMETYPE_PAYMENTREQUEST.equals(mimeType)) {
-                        final byte[] paymentRequest = SchillingcoinIntegration.paymentRequestFromIntent(intent);
+                        final byte[] paymentRequest = SchillingCoinIntegration.paymentRequestFromIntent(intent);
 
                         if (intentUri != null)
                             initStateFromIntentUri(mimeType, intentUri);
@@ -1569,9 +1563,9 @@ public final class SendCoinsFragment extends Fragment
                     log.info("returning result to calling activity: {}", callingActivity.flattenToString());
 
                     final Intent result = new Intent();
-                    SchillingcoinIntegration.transactionHashToResult(result, sentTransaction.getHashAsString());
+                    SchillingCoinIntegration.transactionHashToResult(result, sentTransaction.getHashAsString());
                     if (paymentIntent.standard == Standard.BIP70)
-                        SchillingcoinIntegration.paymentToResult(result, payment.toByteArray());
+                        SchillingCoinIntegration.paymentToResult(result, payment.toByteArray());
                     activity.setResult(Activity.RESULT_OK, result);
                 }
             }

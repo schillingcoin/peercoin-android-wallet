@@ -2,8 +2,8 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'com.android.library'
 
-group = 'Schillingcoin-android-wallet.integration-android'
-description = 'Schillingcoin Integration for Android'
+group = 'SchillingCoin-android-wallet.integration-android'
+description = 'SchillingCoin Integration for Android'
 version = '1.0.0'
 
 buildscript {
@@ -12,7 +12,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.android.tools.build:gradle:3.1.4'
         classpath 'com.google.gms:google-services:3.2.1'
     }
 }

@@ -16,7 +16,7 @@
 
 package com.schillingcoin.schillingcoin_android_wallet.integration.sample;
 
-import org.Schillingcoin.protocols.payments.Protos;
+import org.schillingcoin.protocols.payments.Protos;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -37,7 +37,7 @@ import com.schillingcoin.schillingcoinj.core.NetworkParameters;
 import com.schillingcoin.schillingcoinj.script.ScriptBuilder;
 import com.google.protobuf.ByteString;
 
-import com.schillingcoin.schillingcoin_android_wallet.integration.android.SchillingcoinIntegration;
+import com.schillingcoin.schillingcoin_android_wallet.integration.android.SchillingCoinIntegration;
 
 /**
  * @author Andreas Schildbach
@@ -92,7 +92,7 @@ public class SampleActivity extends Activity
 	{
 		final String[] addresses = donationAddresses();
 
-		SchillingcoinIntegration.requestForResult(SampleActivity.this, REQUEST_CODE, addresses[0]);
+		SchillingCoinIntegration.requestForResult(SampleActivity.this, REQUEST_CODE, addresses[0]);
 	}
 
 	private void handleRequest()
@@ -120,7 +120,7 @@ public class SampleActivity extends Activity
 			final Protos.PaymentRequest.Builder paymentRequest = Protos.PaymentRequest.newBuilder();
 			paymentRequest.setSerializedPaymentDetails(paymentDetails.build().toByteString());
 
-			SchillingcoinIntegration.requestForResult(SampleActivity.this, REQUEST_CODE, paymentRequest.build().toByteArray());
+			SchillingCoinIntegration.requestForResult(SampleActivity.this, REQUEST_CODE, paymentRequest.build().toByteArray());
 		}
 		catch (final AddressFormatException x)
 		{
@@ -135,7 +135,7 @@ public class SampleActivity extends Activity
 		{
 			if (resultCode == Activity.RESULT_OK)
 			{
-				final String txHash = SchillingcoinIntegration.transactionHashFromResult(data);
+				final String txHash = SchillingCoinIntegration.transactionHashFromResult(data);
 				if (txHash != null)
 				{
 					final SpannableStringBuilder messageBuilder = new SpannableStringBuilder("Transaction hash:\n");
@@ -143,7 +143,7 @@ public class SampleActivity extends Activity
 					messageBuilder.setSpan(new TypefaceSpan("monospace"), messageBuilder.length() - txHash.length(), messageBuilder.length(),
 							Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-					if (SchillingcoinIntegration.paymentFromResult(data) != null)
+					if (SchillingCoinIntegration.paymentFromResult(data) != null)
 						messageBuilder.append("\n(also a BIP70 payment message was received)");
 
 					donateMessage.setText(messageBuilder);

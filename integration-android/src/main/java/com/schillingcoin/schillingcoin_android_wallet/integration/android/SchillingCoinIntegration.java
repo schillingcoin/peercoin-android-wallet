@@ -26,21 +26,21 @@ import android.widget.Toast;
 /**
  * @author Andreas Schildbach
  */
-public final class SchillingcoinIntegration
+public final class SchillingCoinIntegration
 {
 	private static final String INTENT_EXTRA_PAYMENTREQUEST = "paymentrequest";
 	private static final String INTENT_EXTRA_PAYMENT = "payment";
 	private static final String INTENT_EXTRA_TRANSACTION_HASH = "transaction_hash";
 
-	private static final String MIMETYPE_PAYMENTREQUEST = "application/Schillingcoin-paymentrequest"; // BIP 71
+	private static final String MIMETYPE_PAYMENTREQUEST = "application/SchillingCoin-paymentrequest"; // BIP 71
 
 	/**
-	 * Request any amount of Schillingcoin (probably a donation) from user, without feedback from the app.
+	 * Request any amount of SchillingCoin (probably a donation) from user, without feedback from the app.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Schillingcoin address
+	 *            SchillingCoin address
 	 */
 	public static void request(final Context context, final String address)
 	{
@@ -50,14 +50,14 @@ public final class SchillingcoinIntegration
 	}
 
 	/**
-	 * Request specific amount of Schillingcoin from user, without feedback from the app.
+	 * Request specific amount of SchillingCoin from user, without feedback from the app.
 	 * 
 	 * @param context
 	 *            Android context
 	 * @param address
-	 *            Schillingcoin address
+	 *            SchillingCoin address
 	 * @param amount
-	 *            Schillingcoin amount in nanocoins
+	 *            SchillingCoin amount in nanocoins
 	 */
 	public static void request(final Context context, final String address, final long amount)
 	{
@@ -82,12 +82,12 @@ public final class SchillingcoinIntegration
 	}
 
 	/**
-	 * Request any amount of Schillingcoin (probably a donation) from user, with feedback from the app. Result intent can be
+	 * Request any amount of SchillingCoin (probably a donation) from user, with feedback from the app. Result intent can be
 	 * received by overriding {@link android.app.Activity#onActivityResult()}. Result indicates either
 	 * {@link Activity#RESULT_OK} or {@link Activity#RESULT_CANCELED}. In the success case, use
 	 * {@link #transactionHashFromResult(Intent)} to read the transaction hash from the intent.
 	 * 
-	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Schillingcoin
+	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own SchillingCoin
 	 * infrastructure and validate the transaction.
 	 * 
 	 * @param activity
@@ -95,7 +95,7 @@ public final class SchillingcoinIntegration
 	 * @param requestCode
 	 *            Code identifying the call when {@link android.app.Activity#onActivityResult()} is called back
 	 * @param address
-	 *            Schillingcoin address
+	 *            SchillingCoin address
 	 */
 	public static void requestForResult(final Activity activity, final int requestCode, final String address)
 	{
@@ -105,12 +105,12 @@ public final class SchillingcoinIntegration
 	}
 
 	/**
-	 * Request specific amount of Schillingcoins from user, with feedback from the app. Result intent can be received by
+	 * Request specific amount of SchillingCoins from user, with feedback from the app. Result intent can be received by
 	 * overriding {@link android.app.Activity#onActivityResult()}. Result indicates either {@link Activity#RESULT_OK} or
 	 * {@link Activity#RESULT_CANCELED}. In the success case, use {@link #transactionHashFromResult(Intent)} to read the
 	 * transaction hash from the intent.
 	 * 
-	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Schillingcoin
+	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own SchillingCoin
 	 * infrastructure and validate the transaction.
 	 * 
 	 * @param activity
@@ -118,7 +118,7 @@ public final class SchillingcoinIntegration
 	 * @param requestCode
 	 *            Code identifying the call when {@link android.app.Activity#onActivityResult()} is called back
 	 * @param address
-	 *            Schillingcoin address
+	 *            SchillingCoin address
 	 */
 	public static void requestForResult(final Activity activity, final int requestCode, final String address, final long amount)
 	{
@@ -133,7 +133,7 @@ public final class SchillingcoinIntegration
 	 * {@link Activity#RESULT_CANCELED}. In the success case, use {@link #transactionHashFromResult(Intent)} to read the
 	 * transaction hash from the intent.
 	 * 
-	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own Schillingcoin
+	 * Warning: A success indication is no guarantee! To be on the safe side, you must drive your own SchillingCoin
 	 * infrastructure and validate the transaction.
 	 * 
 	 * @param activity
@@ -165,7 +165,7 @@ public final class SchillingcoinIntegration
 	}
 
 	/**
-	 * Put BIP70 payment message into result intent. Meant for usage by Schillingcoin wallet applications.
+	 * Put BIP70 payment message into result intent. Meant for usage by SchillingCoin wallet applications.
 	 * 
 	 * @param result
 	 *            result intent
@@ -178,10 +178,10 @@ public final class SchillingcoinIntegration
 	}
 
 	/**
-	 * Get BIP70 payment message from result intent. Meant for usage by applications initiating a Schillingcoin payment.
+	 * Get BIP70 payment message from result intent. Meant for usage by applications initiating a SchillingCoin payment.
 	 * 
 	 * You can use the transactions contained in the payment to validate the payment. For this, you need your own
-	 * Schillingcoin infrastructure though. There is no guarantee that the payment will ever confirm.
+	 * SchillingCoin infrastructure though. There is no guarantee that the payment will ever confirm.
 	 * 
 	 * @param result
 	 *            result intent
@@ -195,7 +195,7 @@ public final class SchillingcoinIntegration
 	}
 
 	/**
-	 * Put transaction hash into result intent. Meant for usage by Schillingcoin wallet applications.
+	 * Put transaction hash into result intent. Meant for usage by SchillingCoin wallet applications.
 	 * 
 	 * @param result
 	 *            result intent
@@ -208,11 +208,11 @@ public final class SchillingcoinIntegration
 	}
 
 	/**
-	 * Get transaction hash from result intent. Meant for usage by applications initiating a Schillingcoin payment.
+	 * Get transaction hash from result intent. Meant for usage by applications initiating a SchillingCoin payment.
 	 * 
-	 * You can use this hash to request the transaction from the Schillingcoin network, in order to validate. For this, you
-	 * need your own Schillingcoin infrastructure though. There is no guarantee that the transaction has ever been broadcasted
-	 * to the Schillingcoin network.
+	 * You can use this hash to request the transaction from the SchillingCoin network, in order to validate. For this, you
+	 * need your own SchillingCoin infrastructure though. There is no guarantee that the transaction has ever been broadcasted
+	 * to the SchillingCoin network.
 	 * 
 	 * @param result
 	 *            result intent
@@ -229,7 +229,7 @@ public final class SchillingcoinIntegration
 
 	private static Intent makeURIIntent(final String address, final Long amount)
 	{
-		final StringBuilder uri = new StringBuilder("Schillingcoin:");
+		final StringBuilder uri = new StringBuilder("SchillingCoin:");
 		if (address != null)
 			uri.append(address);
 		if (amount != null)
@@ -269,10 +269,10 @@ public final class SchillingcoinIntegration
 
 	private static void redirectToDownload(final Context context)
 	{
-		Toast.makeText(context, "No Schillingcoin application found.\nPlease install Schillingcoin Wallet.", Toast.LENGTH_LONG).show();
+		Toast.makeText(context, "No SchillingCoin application found.\nPlease install SchillingCoin Wallet.", Toast.LENGTH_LONG).show();
 
-		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.matthewmitchell.Schillingcoin_android_wallet"));
-		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/MatthewLM/Schillingcoin-android-wallet"));
+		final Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.matthewmitchell.SchillingCoin_android_wallet"));
+		final Intent binaryIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/MatthewLM/SchillingCoin-android-wallet"));
 
 		final PackageManager pm = context.getPackageManager();
 		if (pm.resolveActivity(marketIntent, 0) != null)

@@ -253,7 +253,7 @@ public final class WalletAddressesFragment extends FancyListFragment
 
 			private void handleCopyToClipboard(@Nonnull final Address address)
 			{
-				clipboardManager.setPrimaryClip(ClipData.newPlainText("Schillingcoin address", address.toString()));
+				clipboardManager.setPrimaryClip(ClipData.newPlainText("SchillingCoin address", address.toString()));
 				log.info("address copied to clipboard: {}", address.toString());
 				activity.toast(R.string.wallet_address_fragment_clipboard_msg);
 			}

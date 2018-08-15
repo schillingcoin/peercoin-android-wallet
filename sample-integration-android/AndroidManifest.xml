@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.matthewmitchell.Schillingcoin_android_wallet.integration.sample"
+	package="com.matthewmitchell.SchillingCoin_android_wallet.integration.sample"
 	android:versionCode="1"
 	android:versionName="1.0" >
 
@@ -16,7 +16,7 @@
 		android:normalScreens="true"
 		android:smallScreens="true" />
 
-	<application android:label="Schillingcoin in-app payment sample" >
+	<application android:label="SchillingCoin in-app payment sample" >
 		<activity
 			android:name="com.schillingcoin.schillingcoin_android_wallet.integration.sample.SampleActivity"
 			android:theme="@android:style/Theme.Light" >

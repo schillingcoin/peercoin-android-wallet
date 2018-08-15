@@ -7,8 +7,8 @@
     <!--<header
         android:title="@string/preferences_category_trusted_servers">
 
-        <intent android:targetPackage="com.matthewmitchell.Schillingcoin_android_wallet"
-            android:targetClass="com.matthewmitchell.Schillingcoin_android_wallet.ui.preference.TrustedServersActivity" />
+        <intent android:targetPackage="com.matthewmitchell.SchillingCoin_android_wallet"
+            android:targetClass="com.matthewmitchell.SchillingCoin_android_wallet.ui.preference.TrustedServersActivity" />
 
     </header>-->
 	<header

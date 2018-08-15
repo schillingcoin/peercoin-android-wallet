@@ -1,10 +1,10 @@
 v3.2
 
-* Added willy's trusted server (abe.Schillingcoinexplorer.net)
+* Added willy's trusted server (abe.SchillingCoinexplorer.net)
 * Updated DNS seeds
-* Use "Schillingcoin:" URI prefix
+* Use "SchillingCoin:" URI prefix
 * Updated logo
-* Using Schillingcoinj 0.13.1
+* Using SchillingCoinj 0.13.1
 
 v3.1
 
@@ -12,7 +12,7 @@ v3.1
 
 v3.0
 
-* Using Schillingcoinj 0.13.0
+* Using SchillingCoinj 0.13.0
 * Shapeshift API integration. This enables seamless payments in supported foreign coin addresses and URIs
 from within the App without the use of external plugins by either merchant or customer.
 * Transactions can be exported to csv files by the "Export" menu option.
@@ -34,9 +34,9 @@ v2.4
 
 v2.3
 
-* Use Schillingcoinj 0.12.3, fix loading crash, and remove redundant dust message.
+* Use SchillingCoinj 0.12.3, fix loading crash, and remove redundant dust message.
 
 v2.0
 
-* Update in line with Schillingcoinj 0.12.2 and with version 4.13 of Andreas Schildbach's Bitcoin Android wallet
+* Update in line with SchillingCoinj 0.12.2 and with version 4.13 of Andreas Schildbach's Bitcoin Android wallet
 

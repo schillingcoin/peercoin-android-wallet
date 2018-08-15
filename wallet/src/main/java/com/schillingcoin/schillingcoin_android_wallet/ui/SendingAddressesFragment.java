@@ -353,7 +353,7 @@ public final class SendingAddressesFragment extends FancyListFragment implements
 
 	private void handleCopyToClipboard(final String address)
 	{
-		clipboardManager.setPrimaryClip(ClipData.newPlainText("Schillingcoin address", address));
+		clipboardManager.setPrimaryClip(ClipData.newPlainText("SchillingCoin address", address));
 		log.info("address copied to clipboard: {}", address.toString());
 		activity.toast(R.string.wallet_address_fragment_clipboard_msg);
 	}
