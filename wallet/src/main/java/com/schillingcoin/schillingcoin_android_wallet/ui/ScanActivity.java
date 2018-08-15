@@ -24,6 +24,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -31,6 +32,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -43,6 +45,9 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Process;
 import android.os.Vibrator;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -66,6 +71,7 @@ import com.schillingcoin.schillingcoin_android_wallet.R;
 public final class ScanActivity extends Activity implements SurfaceHolder.Callback
 {
 	public static final String INTENT_EXTRA_RESULT = "result";
+	public static final int MY_PERMISSIONS_REQUEST_READ_CAMERA = 6896;
 
 	private static final long VIBRATE_DURATION = 50L;
 	private static final long AUTO_FOCUS_INTERVAL_MS = 2500L;
@@ -118,10 +124,58 @@ public final class ScanActivity extends Activity implements SurfaceHolder.Callba
 	@Override
 	public void surfaceCreated(final SurfaceHolder holder)
 	{
-		cameraHandler.post(openRunnable);
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+
+			// Permission is not granted
+			// Should we show an explanation?
+//			if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+//				// Show an explanation to the user *asynchronously* -- don't block
+//				// this thread waiting for the user's response! After the user
+//				// sees the explanation, try again to request the permission.
+//			} else {
+				// No explanation needed, we can request the permission.
+				ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, MY_PERMISSIONS_REQUEST_READ_CAMERA);
+
+				// MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+				// app-defined int constant. The callback method gets the
+				// result of the request.
+//			}
+		} else {
+			cameraHandler.post(openRunnable);
+		}
 	}
 
 	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults)
+	{
+		switch (requestCode) {
+			case MY_PERMISSIONS_REQUEST_READ_CAMERA: {
+			    if(!cameraThread.isAlive()) {
+                    cameraThread = new HandlerThread("cameraThread", Process.THREAD_PRIORITY_BACKGROUND);
+                    cameraThread.start();
+                    cameraHandler = new Handler(cameraThread.getLooper());
+                }
+
+				cameraHandler.post(openRunnable);
+				// If request is cancelled, the result arrays are empty.
+//				if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//					// permission was granted, yay! Do the
+//					// contacts-related task you need to do.
+//				} else {
+//					// permission denied, boo! Disable the
+//					// functionality that depends on this permission.
+//				}
+//				return;
+			}
+
+			// other 'case' lines to check for other
+			// permissions this app might request.
+		}
+
+	}
+
+
+		@Override
 	public void surfaceDestroyed(final SurfaceHolder holder)
 	{
 	}

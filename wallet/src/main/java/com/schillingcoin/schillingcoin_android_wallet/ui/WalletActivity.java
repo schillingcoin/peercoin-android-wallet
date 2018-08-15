@@ -44,6 +44,7 @@ import com.schillingcoin.schillingcoinj.core.Wallet.BalanceType;
 import com.schillingcoin.schillingcoinj.store.WalletProtobufSerializer;
 import com.schillingcoin.schillingcoinj.wallet.Protos;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -62,6 +63,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Process;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.view.Menu;
@@ -107,6 +113,10 @@ public final class WalletActivity extends AbstractWalletActivity
 	private static final int DIALOG_TIMESKEW_ALERT = 2;
 	private static final int DIALOG_VERSION_ALERT = 3;
 	private static final int DIALOG_LOW_STORAGE_ALERT = 4;
+	private static final int MY_PERMISSIONS_REQUEST_STORAGE = 8965;
+
+	private String password = null;
+	private String permissionRequest = null;
 
 	private WalletApplication application;
 	private Configuration config;
@@ -556,9 +566,25 @@ public final class WalletActivity extends AbstractWalletActivity
 		return dialog.create();
 	}
 
-	private void prepareRestoreWalletDialog(final Dialog dialog)
-	{
-		final AlertDialog alertDialog = (AlertDialog) dialog;
+	private void prepareRestoreWalletDialog(final Dialog dialog) {
+        this.restoreDialog = dialog;
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+            permissionRequest = "restore";
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_STORAGE);
+
+        } else {
+            this.prepareRestoreWalletDialogAsync();
+        }
+    }
+
+    private Dialog restoreDialog;
+
+    private void prepareRestoreWalletDialogAsync() {
+
+		final AlertDialog alertDialog = (AlertDialog) restoreDialog;
 
 		final List<File> files = new LinkedList<File>();
 
@@ -627,6 +653,7 @@ public final class WalletActivity extends AbstractWalletActivity
 	{
 		final View view = getLayoutInflater().inflate(R.layout.backup_wallet_dialog, null);
 		final EditText passwordView = (EditText) view.findViewById(R.id.export_keys_dialog_password);
+		final Activity thisActivity = this;
 
 		final DialogBuilder dialog = new DialogBuilder(this);
 		dialog.setTitle(R.string.export_keys_dialog_title);
@@ -636,12 +663,20 @@ public final class WalletActivity extends AbstractWalletActivity
 			@Override
 			public void onClick(final DialogInterface dialog, final int which)
 			{
-				final String password = passwordView.getText().toString().trim();
+				password = passwordView.getText().toString().trim();
 				passwordView.setText(null); // get rid of it asap
 
-				backupWallet(password);
+				if (ContextCompat.checkSelfPermission(thisActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+						ContextCompat.checkSelfPermission(thisActivity, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
 
-				config.disarmBackupReminder();
+                    permissionRequest = "backup";
+					ActivityCompat.requestPermissions(thisActivity, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_STORAGE);
+
+				} else {
+					backupWallet(password);
+
+					config.disarmBackupReminder();
+				}
 			}
 		});
 		dialog.setNegativeButton(R.string.button_cancel, new OnClickListener()
@@ -661,6 +696,24 @@ public final class WalletActivity extends AbstractWalletActivity
 			}
 		});
 		return dialog.create();
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults)
+	{
+		switch (requestCode) {
+			case MY_PERMISSIONS_REQUEST_STORAGE: {
+
+			    if("backup".equals(permissionRequest)) {
+                    backupWallet(password);
+
+                    config.disarmBackupReminder();
+                }
+                else if("restore".equals(permissionRequest)) {
+			        this.prepareRestoreWalletDialogAsync();
+                }
+			}
+		}
 	}
 
 	private void prepareBackupWalletDialog(final Dialog dialog)
