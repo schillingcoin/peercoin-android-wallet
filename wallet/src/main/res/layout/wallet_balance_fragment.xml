@@ -12,7 +12,7 @@
 		android:orientation="vertical" >
 
 		<com.schillingcoin.schillingcoin_android_wallet.ui.CurrencyTextView
-			android:id="@+id/wallet_balance_ppc"
+			android:id="@+id/wallet_balance_oes"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="@dimen/font_size_huge" />

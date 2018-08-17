@@ -58,7 +58,7 @@ public final class WalletBalanceFragment extends Fragment
 	private LoaderManager loaderManager;
 
 	private View viewBalance;
-	private CurrencyTextView viewBalancePPC;
+	private CurrencyTextView viewBalanceOES;
 	private View viewBalanceTooMuch;
 	private FrameLayout viewBalanceLocalFrame;
 	private CurrencyTextView viewBalanceLocal;
@@ -121,7 +121,7 @@ public final class WalletBalanceFragment extends Fragment
 			viewBalance.setEnabled(false);
 //		}
 
-		viewBalancePPC = (CurrencyTextView) view.findViewById(R.id.wallet_balance_ppc);
+		viewBalanceOES = (CurrencyTextView) view.findViewById(R.id.wallet_balance_oes);
 
 		viewBalanceTooMuch = view.findViewById(R.id.wallet_balance_too_much);
 
@@ -217,10 +217,10 @@ public final class WalletBalanceFragment extends Fragment
 
 			if (balance != null) {
 			    
-				viewBalancePPC.setVisibility(View.VISIBLE);
+				viewBalanceOES.setVisibility(View.VISIBLE);
 				// Configuration should be set now since the balance is loaded
-				viewBalancePPC.setFormat(application.getConfiguration().getFormat());
-				viewBalancePPC.setAmount(balance);
+				viewBalanceOES.setFormat(application.getConfiguration().getFormat());
+				viewBalanceOES.setAmount(balance);
 
 				final boolean tooMuch = balance.isGreaterThan(Coin.COIN.multiply(500));
 				
@@ -244,7 +244,7 @@ public final class WalletBalanceFragment extends Fragment
 			}
 			else
 			{
-				viewBalancePPC.setVisibility(View.INVISIBLE);
+				viewBalanceOES.setVisibility(View.INVISIBLE);
 			}
 
 			viewProgress.setVisibility(View.GONE);

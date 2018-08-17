@@ -229,7 +229,7 @@ public final class SchillingCoinIntegration
 
 	private static Intent makeURIIntent(final String address, final Long amount)
 	{
-		final StringBuilder uri = new StringBuilder("SchillingCoin:");
+		final StringBuilder uri = new StringBuilder("schillingcoin:");
 		if (address != null)
 			uri.append(address);
 		if (amount != null)

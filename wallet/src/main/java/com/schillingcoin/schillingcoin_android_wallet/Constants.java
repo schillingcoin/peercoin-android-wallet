@@ -45,25 +45,25 @@ public final class Constants
         public static final String WALLET_FILENAME_PROTOBUF_OLD = "wallet-protobuf";
 
         /** Filename of the wallet. */
-        public static final String WALLET_FILENAME_PROTOBUF = "SchillingCoin-wallet-protobuf";
+        public static final String WALLET_FILENAME_PROTOBUF = "schillingcoin-wallet-protobuf";
 
         /** Filename of the automatic key backup (old format, can only be read). */
-        public static final String WALLET_KEY_BACKUP_BASE58 = "SchillingCoin-key-backup-base58";
+        public static final String WALLET_KEY_BACKUP_BASE58 = "schillingcoin-key-backup-base58";
 
         /** Filename of the automatic wallet backup. */
-        public static final String WALLET_KEY_BACKUP_PROTOBUF = "SchillingCoin-key-backup-protobuf";
+        public static final String WALLET_KEY_BACKUP_PROTOBUF = "schillingcoin-key-backup-protobuf";
 
         /** Manual backups go here. */
         public static final File EXTERNAL_WALLET_BACKUP_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 
         /** Filename of the manual key backup (old format, can only be read). */
-        public static final String EXTERNAL_WALLET_KEY_BACKUP = "SchillingCoin-wallet-keys";
+        public static final String EXTERNAL_WALLET_KEY_BACKUP = "schillingcoin-wallet-keys";
 
         /** Filename of the manual wallet backup. */
-        public static final String EXTERNAL_WALLET_BACKUP = "SchillingCoin-wallet-backup";
+        public static final String EXTERNAL_WALLET_BACKUP = "schillingcoin-wallet-backup";
 
         /** Filename of exported transactions. */
-        public static final String TX_EXPORT_NAME = "SchillingCoin-transactions";
+        public static final String TX_EXPORT_NAME = "schillingcoin-transactions";
 
         /** Filename of the block store for storing the chain. */
         public static final String BLOCKCHAIN_FILENAME = "blockchain";
@@ -75,16 +75,16 @@ public final class Constants
     /** Maximum size of backups. Files larger will be rejected. */
     public static final long BACKUP_MAX_CHARS = 10000000;
 
-    public static final String EXPLORE_BASE_URL = "https://abe.SchillingCoinexplorer.net/";
+    public static final String EXPLORE_BASE_URL = "http://explorer.schillingcoin.com/";
 
     /** URL to fetch version alerts from. */
     public static final String VERSION_URL = "";
 
     /** MIME type used for transmitting single transactions. */
-    public static final String MIMETYPE_TRANSACTION = "application/x-ppctx";
+    public static final String MIMETYPE_TRANSACTION = "application/x-oestx";
 
     /** MIME type used for transmitting wallet backups. */
-    public static final String MIMETYPE_WALLET_BACKUP = "application/x-SchillingCoin-wallet-backup";
+    public static final String MIMETYPE_WALLET_BACKUP = "application/x-schillingcoin-wallet-backup";
 
     /** MIME type used for transaction export. */
     public static final String MIMETYPE_TX_EXPORT = "text/csv";
@@ -102,7 +102,7 @@ public final class Constants
     public static final String DONATION_ADDRESS = "PNY8FPHRY8NM8VG77TXZ4R3WY7QJ25ATG6";
 
     /** Recipient e-mail address for reports. */
-    public static final String REPORT_EMAIL = "matthewmitchell@thelibertyportal.com";
+    public static final String REPORT_EMAIL = "andrei.miiu@gmail.com";
 
     /** Subject line for manually reported issues. */
     public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
@@ -122,8 +122,8 @@ public final class Constants
 
     public static final MonetaryFormat LOCAL_FORMAT = new MonetaryFormat().noCode().minDecimals(2).optionalDecimals();
 
-    public static final String SOURCE_URL = "https://github.com/MatthewLM/SchillingCoin-android-wallet";
-    public static final String BINARY_URL = "https://github.com/MatthewLM/SchillingCoin-android-wallet/releases";
+    public static final String SOURCE_URL = "https://github.com/schillingcoin/schillingcoin-android-wallet";
+    public static final String BINARY_URL = "https://github.com/schillingcoin/schillingcoin-android-wallet/releases";
     public static final String MARKET_APP_URL = "market://details?id=%s";
     public static final String WEBMARKET_APP_URL = "https://play.google.com/store/apps/details?id=%s";
 

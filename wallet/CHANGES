@@ -2,7 +2,7 @@ v3.2
 
 * Added willy's trusted server (abe.SchillingCoinexplorer.net)
 * Updated DNS seeds
-* Use "SchillingCoin:" URI prefix
+* Use "schillingcoin:" URI prefix
 * Updated logo
 * Using SchillingCoinj 0.13.1
 

@@ -208,15 +208,15 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 			}
 		});
 		
-		final CurrencyAmountView PPCAmountView = (CurrencyAmountView) view.findViewById(R.id.request_coins_amount_ppc);
+		final CurrencyAmountView OESAmountView = (CurrencyAmountView) view.findViewById(R.id.request_coins_amount_oes);
 
 		activity.runAfterLoad(new Runnable() {
 
 			@Override
 			public void run() {
-				PPCAmountView.setCurrencySymbol(config.getFormat().code());
-				PPCAmountView.setInputFormat(config.getMaxPrecisionFormat());
-				PPCAmountView.setHintFormat(config.getFormat());
+				OESAmountView.setCurrencySymbol(config.getFormat().code());
+				OESAmountView.setInputFormat(config.getMaxPrecisionFormat());
+				OESAmountView.setHintFormat(config.getFormat());
 			}
 			
 		});
@@ -225,7 +225,7 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 //		localAmountView.setInputFormat(Constants.LOCAL_FORMAT);
 //		localAmountView.setHintFormat(Constants.LOCAL_FORMAT);
 
-		amountCalculatorLink = new CurrencyCalculatorLink(PPCAmountView, null);
+		amountCalculatorLink = new CurrencyCalculatorLink(OESAmountView, null);
 
 		acceptBluetoothPaymentView = (CheckBox) view.findViewById(R.id.request_coins_accept_bluetooth_payment);
 		acceptBluetoothPaymentView.setVisibility(ENABLE_BLUETOOTH_LISTENING && bluetoothAdapter != null ? View.VISIBLE : View.GONE);
@@ -466,7 +466,7 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 		final int size = getResources().getDimensionPixelSize(R.dimen.bitmap_dialog_qr_size);
 		final String qrContent;
 		if (config.getQrPaymentRequestEnabled())
-			qrContent = "SchillingCoin:-" + Qr.encodeBinary(paymentRequest);
+			qrContent = "schillingcoin:-" + Qr.encodeBinary(paymentRequest);
 		else
 			qrContent = SchillingCoinRequest;
 		qrCodeBitmap = Qr.bitmap(qrContent, size);

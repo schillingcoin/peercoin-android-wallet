@@ -33,7 +33,7 @@ import com.schillingcoin.schillingcoin_android_wallet.ui.CurrencyAmountView.List
  */
 public final class CurrencyCalculatorLink
 {
-	private final CurrencyAmountView PPCAmountView;
+	private final CurrencyAmountView OESAmountView;
 	private final CurrencyAmountView localAmountView;
 
 	private Listener listener = null;
@@ -41,12 +41,12 @@ public final class CurrencyCalculatorLink
 	private ExchangeRate exchangeRate = null;
 	private boolean exchangeDirection = true;
 
-	private final CurrencyAmountView.Listener PPCAmountViewListener = new CurrencyAmountView.Listener()
+	private final CurrencyAmountView.Listener OESAmountViewListener = new CurrencyAmountView.Listener()
 	{
 		@Override
 		public void changed()
 		{
-			if (PPCAmountView.getAmount() != null)
+			if (OESAmountView.getAmount() != null)
 				setExchangeDirection(true);
 			else if(localAmountView != null)
 				localAmountView.setHint(null);
@@ -71,7 +71,7 @@ public final class CurrencyCalculatorLink
 			if (localAmountView != null && localAmountView.getAmount() != null)
 				setExchangeDirection(false);
 			else
-				PPCAmountView.setHint(null);
+				OESAmountView.setHint(null);
 
 			if (listener != null)
 				listener.changed();
@@ -85,10 +85,10 @@ public final class CurrencyCalculatorLink
 		}
 	};
 
-	public CurrencyCalculatorLink(@Nonnull final CurrencyAmountView PPCAmountView, final CurrencyAmountView localAmountView)
+	public CurrencyCalculatorLink(@Nonnull final CurrencyAmountView OESAmountView, final CurrencyAmountView localAmountView)
 	{
-		this.PPCAmountView = PPCAmountView;
-		this.PPCAmountView.setListener(PPCAmountViewListener);
+		this.OESAmountView = OESAmountView;
+		this.OESAmountView.setListener(OESAmountViewListener);
 
 		this.localAmountView = localAmountView;
 
@@ -122,7 +122,7 @@ public final class CurrencyCalculatorLink
 	{
 		if (exchangeDirection)
 		{
-			return (Coin) PPCAmountView.getAmount();
+			return (Coin) OESAmountView.getAmount();
 		}
 		else if (exchangeRate != null && localAmountView != null)
 		{
@@ -149,7 +149,7 @@ public final class CurrencyCalculatorLink
 
 	private void update()
 	{
-		PPCAmountView.setEnabled(enabled);
+		OESAmountView.setEnabled(enabled);
 
 		if (exchangeRate != null && localAmountView != null)
 		{
@@ -158,12 +158,12 @@ public final class CurrencyCalculatorLink
 
 			if (exchangeDirection)
 			{
-				final Coin PPCAmount = (Coin) PPCAmountView.getAmount();
-				if (PPCAmount != null)
+				final Coin OESAmount = (Coin) OESAmountView.getAmount();
+				if (OESAmount != null)
 				{
 					localAmountView.setAmount(null, false);
-					localAmountView.setHint(exchangeRate.coinToFiat(PPCAmount));
-					PPCAmountView.setHint(null);
+					localAmountView.setHint(exchangeRate.coinToFiat(OESAmount));
+					OESAmountView.setHint(null);
 				}
 			}
 			else
@@ -172,14 +172,14 @@ public final class CurrencyCalculatorLink
 				if (localAmount != null)
 				{
 					localAmountView.setHint(null);
-					PPCAmountView.setAmount(null, false);
+					OESAmountView.setAmount(null, false);
 					try
 					{
-						PPCAmountView.setHint(exchangeRate.fiatToCoin(localAmount));
+						OESAmountView.setHint(exchangeRate.fiatToCoin(localAmount));
 					}
 					catch (final ArithmeticException x)
 					{
-						PPCAmountView.setHint(null);
+						OESAmountView.setHint(null);
 					}
 				}
 			}
@@ -190,7 +190,7 @@ public final class CurrencyCalculatorLink
 				localAmountView.setEnabled(false);
 				localAmountView.setHint(null);
 			}
-			PPCAmountView.setHint(null);
+			OESAmountView.setHint(null);
 		}
 	}
 
@@ -209,7 +209,7 @@ public final class CurrencyCalculatorLink
 	public View activeTextView()
 	{
 		if (exchangeDirection)
-			return PPCAmountView.getTextView();
+			return OESAmountView.getTextView();
 		else if(localAmountView != null)
 			return localAmountView.getTextView();
 		else
@@ -221,19 +221,19 @@ public final class CurrencyCalculatorLink
 		activeTextView().requestFocus();
 	}
 
-	public void setPPCAmount(@Nonnull final Coin amount)
+	public void setOESAmount(@Nonnull final Coin amount)
 	{
 		final Listener listener = this.listener;
 		this.listener = null;
 
-		PPCAmountView.setAmount(amount, true);
+		OESAmountView.setAmount(amount, true);
 
 		this.listener = listener;
 	}
 
 	public void setNextFocusId(final int nextFocusId)
 	{
-		PPCAmountView.setNextFocusId(nextFocusId);
+		OESAmountView.setNextFocusId(nextFocusId);
 		if(localAmountView != null)
 			localAmountView.setNextFocusId(nextFocusId);
 	}

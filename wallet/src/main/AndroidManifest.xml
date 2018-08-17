@@ -212,6 +212,15 @@
             android:authorities="com.schillingcoin.schillingcoin_android_wallet.file_attachment"
             android:exported="false"
             android:grantUriPermissions="true" />
+        <provider
+            android:name="com.schillingcoin.schillingcoin_android_wallet.service.GenericFileProvider"
+            android:authorities="${applicationId}.service.GenericFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
 
         <receiver
             android:name="com.schillingcoin.schillingcoin_android_wallet.WalletBalanceWidgetProvider"

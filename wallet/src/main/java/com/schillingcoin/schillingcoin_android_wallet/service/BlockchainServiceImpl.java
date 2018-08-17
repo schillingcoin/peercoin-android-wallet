@@ -197,13 +197,13 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
         if (from != null && !notificationAddresses.contains(from))
             notificationAddresses.add(from);
 
-        final MonetaryFormat ppcFormat = config.getFormat();
+        final MonetaryFormat oesFormat = config.getFormat();
 
         final String packageFlavor = application.applicationPackageFlavor();
         final String msgSuffix = packageFlavor != null ? " [" + packageFlavor + "]" : "";
 
-        final String tickerMsg = getString(R.string.notification_coins_received_msg, ppcFormat.format(amount)) + msgSuffix;
-        final String msg = getString(R.string.notification_coins_received_msg, ppcFormat.format(notificationAccumulatedAmount)) + msgSuffix;
+        final String tickerMsg = getString(R.string.notification_coins_received_msg, oesFormat.format(amount)) + msgSuffix;
+        final String msg = getString(R.string.notification_coins_received_msg, oesFormat.format(notificationAccumulatedAmount)) + msgSuffix;
 
         final StringBuilder text = new StringBuilder();
         for (final Address address : notificationAddresses)

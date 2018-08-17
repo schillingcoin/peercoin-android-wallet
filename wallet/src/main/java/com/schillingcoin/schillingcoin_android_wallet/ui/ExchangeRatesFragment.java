@@ -281,9 +281,9 @@ public final class ExchangeRatesFragment extends FancyListFragment implements On
 				balance = application.getWallet().getBalance(BalanceType.ESTIMATED);
 				
 				if (adapter != null) {
-					final int PPCShift = config.getPPCShift();
+					final int OESShift = config.getOESShift();
 
-					final Coin base = PPCShift == 0 ? Coin.COIN : Coin.MILLICOIN;
+					final Coin base = OESShift == 0 ? Coin.COIN : Coin.MILLICOIN;
 
 					adapter.setRateBase(base);
 				}

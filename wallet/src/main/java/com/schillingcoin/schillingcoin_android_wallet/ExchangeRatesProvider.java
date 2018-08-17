@@ -112,7 +112,7 @@ public class ExchangeRatesProvider extends ContentProvider
 
 	static {
 		try {
-			BTCE_URL = new URL("https://btc-e.com/api/2/ppc_usd/ticker");
+			BTCE_URL = new URL("https://btc-e.com/api/2/oes_usd/ticker");
 		} catch (final MalformedURLException x) {
 			throw new RuntimeException(x); // cannot happen
 		}

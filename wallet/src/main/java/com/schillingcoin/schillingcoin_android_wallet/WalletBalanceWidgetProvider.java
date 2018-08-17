@@ -126,9 +126,9 @@ public class WalletBalanceWidgetProvider extends AppWidgetProvider
 			final Bundle appWidgetOptions, final Coin balance)
 	{
 		final Configuration config = new Configuration(PreferenceManager.getDefaultSharedPreferences(context));
-		final MonetaryFormat ppcFormat = config.getFormat();
+		final MonetaryFormat OESFormat = config.getFormat();
 
-		final Spannable balanceStr = new MonetarySpannable(ppcFormat.noCode(), balance).applyMarkup(null, MonetarySpannable.STANDARD_INSIGNIFICANT_SPANS);
+		final Spannable balanceStr = new MonetarySpannable(OESFormat.noCode(), balance).applyMarkup(null, MonetarySpannable.STANDARD_INSIGNIFICANT_SPANS);
 
 		final Cursor data = context.getContentResolver().query(ExchangeRatesProvider.contentUri(context.getPackageName(), true), null,
 				ExchangeRatesProvider.KEY_CURRENCY_CODE, new String[] { config.getExchangeCurrencyCode() }, null);
@@ -160,15 +160,15 @@ public class WalletBalanceWidgetProvider extends AppWidgetProvider
 
 		final RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.wallet_balance_widget_content);
 
-		final String currencyCode = ppcFormat.code();
+		final String currencyCode = OESFormat.code();
 		if (MonetaryFormat.CODE_OES.equals(currencyCode))
-			views.setImageViewResource(R.id.widget_wallet_prefix, R.drawable.currency_symbol_ppc_widget);
+			views.setImageViewResource(R.id.widget_wallet_prefix, R.drawable.currency_symbol_oes_widget);
 		else if (MonetaryFormat.CODE_MOES.equals(currencyCode))
-			views.setImageViewResource(R.id.widget_wallet_prefix, R.drawable.currency_symbol_mppc_widget);
+			views.setImageViewResource(R.id.widget_wallet_prefix, R.drawable.currency_symbol_moes_widget);
 		else if (MonetaryFormat.CODE_UOES.equals(currencyCode))
-			views.setImageViewResource(R.id.widget_wallet_prefix, R.drawable.currency_symbol_uppc_widget);
+			views.setImageViewResource(R.id.widget_wallet_prefix, R.drawable.currency_symbol_uoes_widget);
 
-		views.setTextViewText(R.id.widget_wallet_balance_ppc, balanceStr);
+		views.setTextViewText(R.id.widget_wallet_balance_oes, balanceStr);
 		views.setViewVisibility(R.id.widget_wallet_balance_local, localBalanceStr != null ? View.VISIBLE : View.GONE);
 		views.setTextViewText(R.id.widget_wallet_balance_local, localBalanceStr);
 

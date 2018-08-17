@@ -173,7 +173,7 @@ public final class SendCoinsFragment extends Fragment
     private Button viewCancel;
 
 //    private CurrencyAmountView localAmountView;
-    private CurrencyAmountView ppcAmountView;
+    private CurrencyAmountView OESAmountView;
 
     private State state = State.INPUT;
 
@@ -550,7 +550,7 @@ public final class SendCoinsFragment extends Fragment
                 config = application.getConfiguration();
                 wallet = application.getWallet();
 
-                for (CurrencyAmountView v : new CurrencyAmountView []{ppcAmountView}) {
+                for (CurrencyAmountView v : new CurrencyAmountView []{OESAmountView}) {
                     v.setCurrencySymbol(config.getFormat().code());
                     v.setInputFormat(config.getMaxPrecisionFormat());
                     v.setHintFormat(config.getFormat());
@@ -575,8 +575,7 @@ public final class SendCoinsFragment extends Fragment
                     if (
                         (Intent.ACTION_VIEW.equals(action)
                              || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)
-                        ) && intentUri != null && (
-                            "ppcoin".equals(scheme) || "SchillingCoin".equals(scheme)
+                        ) && intentUri != null && ("schillingcoin".equals(scheme)
                             || ShapeShift.getCoin(scheme) != null
                         )
                     ) {
@@ -644,9 +643,9 @@ public final class SendCoinsFragment extends Fragment
         payeeNameView = (TextView) view.findViewById(R.id.send_coins_payee_name);
         payeeVerifiedByView = (TextView) view.findViewById(R.id.send_coins_payee_verified_by);
 
-        ppcAmountView = (CurrencyAmountView) view.findViewById(R.id.send_coins_amount_ppc);
+        OESAmountView = (CurrencyAmountView) view.findViewById(R.id.send_coins_amount_oes);
 //        localAmountView = (CurrencyAmountView) view.findViewById(R.id.send_coins_amount_local);
-        amountCalculatorLink = new CurrencyCalculatorLink(ppcAmountView, null);
+        amountCalculatorLink = new CurrencyCalculatorLink(OESAmountView, null);
 
 //        shapeShiftTitles = (LinearLayout) view.findViewById(R.id.send_coins_shapeshift_titles);
 //        shapeShiftAmounts = (LinearLayout) view.findViewById(R.id.send_coins_shapeshift_amounts);
@@ -1170,7 +1169,7 @@ public final class SendCoinsFragment extends Fragment
 //            final ShapeShiftMonetary amount = (ShapeShiftMonetary) shapeShiftForeignAmountView.getAmount();
 //
 //            if (amount == null) {
-//                amountCalculatorLink.setPPCAmount(null);
+//                amountCalculatorLink.setOESAmount(null);
 //                shapeShiftRateView.setAmount(Coin.ZERO, false);
 //                activeShapeShiftComm = null;
 //                shapeShiftStatus = ShapeShiftStatus.NONE;
@@ -1207,7 +1206,7 @@ public final class SendCoinsFragment extends Fragment
 //                                return;
 //                            }
 //
-//                            amountCalculatorLink.setPPCAmount(amount);
+//                            amountCalculatorLink.setOESAmount(amount);
 //                            shapeShiftRateView.setAmount(rate, false);
 //                            depositAddress = deposit;
 //                            lastSendAmountUpdate = System.currentTimeMillis();
@@ -1629,14 +1628,14 @@ public final class SendCoinsFragment extends Fragment
                 final Coin available = wallet.getBalance(BalanceType.AVAILABLE);
                 final Coin pending = estimated.subtract(available);
 
-                final MonetaryFormat ppcFormat = config.getFormat();
+                final MonetaryFormat OESFormat = config.getFormat();
 
                 final DialogBuilder dialog = DialogBuilder.warn(activity, R.string.send_coins_fragment_insufficient_money_title);
                 final StringBuilder msg = new StringBuilder();
-                msg.append(getString(R.string.send_coins_fragment_insufficient_money_msg1, ppcFormat.format(missing)));
+                msg.append(getString(R.string.send_coins_fragment_insufficient_money_msg1, OESFormat.format(missing)));
                 msg.append("\n\n");
                 if (pending.signum() > 0)
-                    msg.append(getString(R.string.send_coins_fragment_pending, ppcFormat.format(pending))).append("\n\n");
+                    msg.append(getString(R.string.send_coins_fragment_pending, OESFormat.format(pending))).append("\n\n");
                 msg.append(getString(R.string.send_coins_fragment_insufficient_money_msg2));
                 dialog.setMessage(msg);
                 dialog.setPositiveButton(R.string.send_coins_options_empty, new DialogInterface.OnClickListener()
@@ -1698,7 +1697,7 @@ public final class SendCoinsFragment extends Fragment
         if(available.isZero() || available.isNegative())
             return;
 
-        amountCalculatorLink.setPPCAmount(available);
+        amountCalculatorLink.setOESAmount(available);
 
         updateShapeShift(false);
 
@@ -2110,12 +2109,12 @@ public final class SendCoinsFragment extends Fragment
 
                         Monetary amount = paymentIntent.getShapeShiftAmount();
                         setShapeShift((ShapeShiftCoin) paymentIntent.networks.get(0), amount != null, amount);
-                        amountCalculatorLink.setPPCAmount(Coin.ZERO);
+                        amountCalculatorLink.setOESAmount(Coin.ZERO);
 
                     }else{
 
                         usingShapeShiftCoin = null;
-                        amountCalculatorLink.setPPCAmount(paymentIntent.getAmount());
+                        amountCalculatorLink.setOESAmount(paymentIntent.getAmount());
 
                         if (paymentIntent.isBluetoothPaymentUrl())
                             directPaymentEnableView.setChecked(bluetoothAdapter != null && bluetoothAdapter.isEnabled());

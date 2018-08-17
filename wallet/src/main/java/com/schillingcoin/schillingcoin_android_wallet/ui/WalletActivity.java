@@ -68,6 +68,7 @@ import android.os.Process;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.view.Menu;
@@ -372,6 +373,7 @@ public final class WalletActivity extends AbstractWalletActivity
         // Create CSV file from transactions
 
         final File file = new File(Constants.Files.EXTERNAL_WALLET_BACKUP_DIR, Constants.Files.TX_EXPORT_NAME + "-" + getFileDate() + ".csv");
+		final Activity thisActivity = this;
 
         try {
 
@@ -425,7 +427,7 @@ public final class WalletActivity extends AbstractWalletActivity
                 intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.export_transactions_mail_subject));
                 intent.putExtra(Intent.EXTRA_TEXT, makeEmailText(getString(R.string.export_transactions_mail_text)));
                 intent.setType(Constants.MIMETYPE_TX_EXPORT);
-                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+                intent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(thisActivity, thisActivity.getApplicationContext().getPackageName() + ".service.GenericFileProvider", file));
 
                 try {
                     startActivity(Intent.createChooser(intent, getString(R.string.export_transactions_mail_intent_chooser)));
@@ -583,6 +585,10 @@ public final class WalletActivity extends AbstractWalletActivity
     private Dialog restoreDialog;
 
     private void prepareRestoreWalletDialogAsync() {
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+				ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+			return;
+		}
 
 		final AlertDialog alertDialog = (AlertDialog) restoreDialog;
 
@@ -974,6 +980,10 @@ public final class WalletActivity extends AbstractWalletActivity
     }
 
 	private void backupWallet(@Nonnull final String password) {
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+				ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+			return;
+		}
 
 		Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.mkdirs();
 
@@ -1036,7 +1046,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.export_keys_dialog_mail_subject));
         intent.putExtra(Intent.EXTRA_TEXT, makeEmailText(getString(R.string.export_keys_dialog_mail_text)));
 		intent.setType(Constants.MIMETYPE_WALLET_BACKUP);
-		intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+		intent.putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".service.GenericFileProvider", file));
 
 		try
 		{

@@ -85,7 +85,7 @@ public abstract class InputParser
         @Override
         public void parse()
         {
-            if (input.startsWith("ppcoin:-") || input.startsWith("SchillingCoin:-"))
+            if (input.startsWith("schillingcoin:-"))
             {
                 try
                 {
@@ -112,7 +112,7 @@ public abstract class InputParser
                     error(R.string.input_parser_invalid_paymentrequest, x.getMessage());
                 }
             }
-            else if (input.startsWith("ppcoin:") || input.startsWith("SchillingCoin:"))
+            else if (input.startsWith("schillingcoin:"))
             {
                 try
                 {

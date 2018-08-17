@@ -209,13 +209,13 @@
 		android:showDividers="middle" >
 
 		<com.schillingcoin.schillingcoin_android_wallet.ui.CurrencyAmountView
-			android:id="@+id/send_coins_amount_ppc"
+			android:id="@+id/send_coins_amount_oes"
 			android:layout_width="0px"
 			android:layout_height="wrap_content"
 			android:layout_weight="1" >
 
 			<EditText
-				android:id="@+id/send_coins_amount_ppc_edittext"
+				android:id="@+id/send_coins_amount_oes_edittext"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:imeOptions="flagNoExtractUi"

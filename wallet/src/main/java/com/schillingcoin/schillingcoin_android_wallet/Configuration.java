@@ -60,8 +60,8 @@ public class Configuration
 	public static final String PREFS_KEY_REMIND_BACKUP = "remind_backup";
 	private static final String PREFS_KEY_LAST_BACKUP = "last_backup";
 
-	private static final int PREFS_DEFAULT_PPC_SHIFT = 0;
-	private static final int PREFS_DEFAULT_PPC_PRECISION = 2;
+	private static final int PREFS_DEFAULT_OES_SHIFT = 0;
+	private static final int PREFS_DEFAULT_OES_PRECISION = 2;
 
 	private static final Logger log = LoggerFactory.getLogger(Configuration.class);
 
@@ -72,35 +72,35 @@ public class Configuration
 		this.lastVersionCode = prefs.getInt(PREFS_KEY_LAST_VERSION, 0);
 	}
 
-	private int getPPCPrecision()
+	private int getOESPrecision()
 	{
 		final String precision = prefs.getString(PREFS_KEY_OES_PRECISION, null);
 		if (precision != null)
 			return precision.charAt(0) - '0';
 		else
-			return PREFS_DEFAULT_PPC_PRECISION;
+			return PREFS_DEFAULT_OES_PRECISION;
 	}
 
-	public int getPPCShift()
+	public int getOESShift()
 	{
 		final String precision = prefs.getString(PREFS_KEY_OES_PRECISION, null);
 		if (precision != null)
 			return precision.length() == 3 ? precision.charAt(2) - '0' : 0;
 		else
-			return PREFS_DEFAULT_PPC_SHIFT;
+			return PREFS_DEFAULT_OES_SHIFT;
 	}
 
 	public MonetaryFormat getFormat()
 	{
-		final int shift = getPPCShift();
+		final int shift = getOESShift();
 		final int minPrecision = shift <= 3 ? 2 : 0;
-		final int decimalRepetitions = (getPPCPrecision() - minPrecision) / 2;
+		final int decimalRepetitions = (getOESPrecision() - minPrecision) / 2;
 		return new MonetaryFormat().shift(shift).minDecimals(minPrecision).repeatOptionalDecimals(2, decimalRepetitions);
 	}
 
 	public MonetaryFormat getMaxPrecisionFormat()
 	{
-		final int shift = getPPCShift();
+		final int shift = getOESShift();
 		if (shift == 0)
 			return new MonetaryFormat().shift(0).minDecimals(2).optionalDecimals(2, 2);
 		else if (shift == 3)
